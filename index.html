@@ -2,6 +2,7 @@
 <html lang="en-US">
 <head>
   <title>Language Suggester</title>
+  <link href="css/bootstrap.css" rel ="stylesheet" type="text/css" media="all">
   <link href="css/styles.css" rel="stylesheet" type="text/css">
   <script src="js/scripts.js"></script>
 </head>
@@ -19,17 +20,19 @@
 
   <!-- form -->
   
-  <p>Which language attribute is most important to you?</p>
+  <h5>Which language attribute is most important to you?</h5>
   <form id="languageSurvey">
     <select id="priority">
       <option>Easy to learn</option>
       <option>Versatility</option>
-      <option>Marketability</option>
+      <option>Named after a type of snake</option>
     </select>
-
-    <p>Which statement applies most to you?</p>
+    <br>
+    <br>
+    <h5>Which statement applies most to you?</h5>
       <input type="radio" name="robot1" value="yes" id="worried" checked>
       <label for="worried">I'm worried about the robot uprising</label>
+      <br>
       <input type="radio" name="robot1" value="no" id="notWorried">
       <label for="notWorried">Nah, we've got at least 15 years before that's an issue.</label>
 
@@ -39,14 +42,22 @@
     <br>
     <br>
     <button type="submit">Submit Your Answers!</button>
+    <br>
+    <br>
   </form>
 
 
 <!-- results heading -->
-<!-- potential result 1 -->
-<!-- potential result 2 -->
-<!-- potential result 3 -->
+<h1 class="hidden">Results!</h1>
 
+<!-- potential result 1 -->
+<p id="result1" class="hidden">Based on our calculations, <span id="name"></span>you should learn <span id="result"></span>.</p>
+
+<!-- potential result 2 -->
+<p id="result2" class="hidden">Based on our calculations, <span id="name"></span>you should learn <span id="result"></span>.</p>
+
+<!-- potential result 3 (Python) -->
+<p id="result3" class="hidden">I bet you thought I was going to suggest python, <span id="name"></span>. You'd like that, wouldn't you? <span id="name"></span>, you can't just pick a language because is named after a snake. That's a horrible reason, and frankly, a little weird. I don't even want to tell you my suggestion, now. Oh, well, ok....um...I guess...Ruby??? Yeah, sure. Ruby. Let's go with that.<span id="result"></span>.</p>
 
 </body>
 </html>
