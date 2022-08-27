@@ -10,13 +10,16 @@ function hideResults() {
     //document.getElementById('languageSurvey').reset();
 
 // set variables containing input values for each form
-const name = document.getElementById("userNameInput").value;
-const priority = document.getElementById("priority").value;
+//const name = document.getElementById("userNameInput").value;
+
 
 // conditionals to display results
 function processSurvey(event) {
   event.preventDefault();
-  document.querySelector("span#name").innerText = userNameInput;
+  hideResults();
+  const priority = document.getElementById("priority").value;
+  const name = document.getElementById("userNameInput").value;
+  document.querySelector("span#name").innerText = name;
   if (priority === "1") {
     document.getElementById("result1").removeAttribute("class");
   } else if (priority === "2") {
@@ -27,5 +30,8 @@ function processSurvey(event) {
 }
 
 //Execute process
-
+window.addEventListener("load", function() {
+  const survey = document.getElementById("languageSurvey");
+  survey.addEventListener("submit", processSurvey);
+});
 
