@@ -1,26 +1,22 @@
-// function hide results and error
+
 function hideResults() {
   document.getElementById("result1").setAttribute("class", "hidden");
   document.getElementById("result2").setAttribute("class", "hidden");
   document.getElementById("result3").setAttribute("class", "hidden");
+  document.getElementById("result4").setAttribute("class", "hidden");
+  document.getElementById("result5").setAttribute("class", "hidden");
+  document.getElementById("result6").setAttribute("class", "hidden");
 }
 
-// function to clear previous results
-    //document.getElementById('userName').reset();
-    //document.getElementById('languageSurvey').reset();
-
-// set variables containing input values for each form
-//const name = document.getElementById("userNameInput").value;
-
-
-// conditionals to display results
 function processSurvey(event) {
   
   event.preventDefault();
   hideResults();
   const priority = document.getElementById("priority").value;
   const help = document.querySelector("input[name='revolution']:checked").value
-  let name = document.getElementById("userNameInput").value;
+  const name = document.getElementById("userNameInput").value;
+  
+  document.getElementById("resultsHeading").removeAttribute("class");
   
   if (priority === "1" && help === "yes") {
     document.getElementById("result1").removeAttribute("class");
@@ -42,9 +38,8 @@ function processSurvey(event) {
     document.getElementById("result6").removeAttribute("class");
     document.querySelector("span#name7").innerText = name;
   }
-}
+};
 
-//Execute process
 window.addEventListener("load", function() {
   const survey = document.getElementById("languageSurvey");
   survey.addEventListener("submit", processSurvey);
