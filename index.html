@@ -7,57 +7,74 @@
   <script src="js/scripts.js"></script>
 </head>
 <body>
-  <div>
-    <h1>Programming Language Suggester</h1>
-    <p>Fill out the forms below to find out what programming language you should learn first!</p>
-  </div>
+  <div class="container">
+    <div class="jumbotron">
+      <h1>Programming Language Suggester</h1>
+      <p>Fill out the forms below to find out what programming language you should learn first!</p>
+    </div>
 
-<!-- user name prompt -->
-  <form>
-    <label for="userNameInput">Please enter your name</label>
-    <input id="userNameInput" type="text" name="userNameInput">
-  </form>
+    <!-- user name prompt -->
+    <div class="form-group">
+      <form id="userName">
+        <label for="userNameInput">Please enter your name</label>
+        <input id="userNameInput" class="form-control" type="text" name="userNameInput">
+      </form>
+    </div>
+    <!-- form -->
+    
+    <div class="form-group">
+      <form id="languageSurvey">
+        <h5>Which language attribute is most important to you?</h5>
+        <select id="priority" class="form-control">
+          <option value="1">Can teach a computer to experience emotions</option>
+          <option value="2">Demontrates that humans and computers can co-exist peacefully</option>
+          <option value="3">Named after a type of snake</option>
+        </select>
+        <br>
+        <br>
+        
+        <div class="form-check">
+          <h5>Which statement applies most to you?</h5>
+            <input type="radio" name="robot1" value="yes" id="worried" checked>
+            <label for="worried">I'm worried about the robot uprising</label>
+            <br>
+            <input type="radio" name="robot1" value="no" id="notWorried">
+            <label for="notWorried">Nah, we've got at least 15 years before that's an issue.</label>
+            <br>
+            <input type="radio" name="robot1" value="no" id="welcome">
+            <label for="welcome">I welcome the robot uprising, and humbly submit before our new overlords.</label>
+          <br>
+          <br>
+          <h5>Do you think learning a new language will really help you when the revolution begins?</h5>
+            <input type="radio" name="revolution" value="yes" id="help" checked>
+            <label for="help">Not only will it help, it will play a pivotal role in the fight!</label>
+            <br>
+            <input type="radio" name="revolution" value="no" id="notHelp">
+            <label for="notHelp">Probably not, but maybe it will impress the robots enough that they'll spare me.</label>
+        </div>
 
-  <!-- form -->
-  
-  <h5>Which language attribute is most important to you?</h5>
-  <form id="languageSurvey">
-    <select id="priority">
-      <option value="1">Easy to learn</option>
-      <option value="2">Versatility</option>
-      <option value="3">Named after a type of snake</option>
-    </select>
-    <br>
-    <br>
-    <h5>Which statement applies most to you?</h5>
-      <input type="radio" name="robot1" value="yes" id="worried" checked>
-      <label for="worried">I'm worried about the robot uprising</label>
-      <br>
-      <input type="radio" name="robot1" value="no" id="notWorried">
-      <label for="notWorried">Nah, we've got at least 15 years before that's an issue.</label>
+    
+
+        <br>
+        <br>
+        <button type="submit">Submit Your Answers!</button>
+        <br>
+        <br>
+      </form>
+    </div>
 
 
+    <!-- results heading -->
+    <h1 class="hidden">Results!</h1>
 
+    <!-- potential result 1 -->
+    <p id="result1" class="hidden">Based on our calculations, <span id="name1">____</span> you should learn Rust.</p>
 
-    <br>
-    <br>
-    <button type="submit">Submit Your Answers!</button>
-    <br>
-    <br>
-  </form>
+    <!-- potential result 2 -->
+    <p id="result2" class="hidden">Based on our calculations, <span id="name2">___</span> you should learn C#.</p>
 
-
-<!-- results heading -->
-<h1 class="hidden">Results!</h1>
-
-<!-- potential result 1 -->
-<p id="result1" class="hidden">Based on our calculations, <span id="name">____</span> you should learn Rust.</p>
-
-<!-- potential result 2 -->
-<p id="result2" class="hidden">Based on our calculations, <span id="name">___</span> you should learn C#.</p>
-
-<!-- potential result 3 (Python) -->
-<p id="result3" class="hidden">I bet you thought I was going to suggest python, <span id="name"></span>. You'd like that, wouldn't you? <span id="name"></span>, you can't just pick a language because is named after a snake. That's a horrible reason, and a little weird if I'm being honest. I don't even want to tell you my suggestion, now. Oh, well, ok....um...I guess...Ruby??? Yeah, sure. Ruby. Let's go with that.</p>
-
+    <!-- potential result 3 (Python) -->
+    <p id="result3" class="hidden">I bet you thought I was going to suggest python, <span id="name3">___</span>. You'd like that, wouldn't you? <br><span id="name4">___</span>, you can't just pick a language because is named after a snake. That's a horrible reason, and a little weird if I'm being honest. I don't even want to tell you my suggestion, now. Oh, well, ok....um...I guess...Ruby??? Yeah, sure. Ruby. Let's go with that.</p>
+</div>
 </body>
 </html>
